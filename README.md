@@ -1,5 +1,20 @@
 [![MIT License][license-shield]][license-url]
 
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/threatact0r/accidentalFlask">
+    <img src="images/logo.png" alt="Logo" width="100" height="100">
+  </a>
+
+  <h3 align="center">accidentalFlask</h3>
+
+  <p align="center">
+    A simple vulnerable token machine
+    <br />
+  </p>
+</p>
+
 # accidentalFlask
 A Ssimple vulnerable Python API for educational purposes, specifically built for token entropy abuse. The app is built in Python 3 with Flask and exposes 2 APIs at "/token" and "/whomai".
 
