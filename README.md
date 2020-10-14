@@ -8,5 +8,26 @@ cd accidentalFlask
 python3 -m pip install -r requirement.txt
 ```
 
-#### Run
-``` python3 app.py ```
+#### Run 
+``` python3 app.py & ```
+
+#### Exploit
+On every run, the ```admin``` token is generated and echoed to terminal. The ```token``` endpoint will create a weak RC4 encrypted blob based on the provided username, students can use tools like attack proxies (e.g. Burp sequencer) to enumrate the entropy of the token, and attempt to generate a valid ```admin``` token. An admin token can be verified by hitting the ```whoami``` endpoint which will respond with ```You are logged in as admin``` if the token matches. RC4 is vulnerable to bit-flipping, this can be done with Burp intruder or any other automation tool.
+
+1. token endpoint
+``` 
+curl --location --request POST 'http://127.0.0.1:5000/token' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "Username": "bdmin",
+    "Password": "password"
+}'
+```
+2. whoami endpoint
+```
+curl --location --request POST 'http://127.0.0.1:5000/whoami' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "Token": "<insert_token_here>"
+}'
+```
