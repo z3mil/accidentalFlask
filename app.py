@@ -1,6 +1,5 @@
 from flask import Flask, json, request, jsonify
-import hashlib, random, time
-import arc4, binascii
+import arc4, binascii, random
 from colorama import Fore, Style
 
 api = Flask(__name__)
