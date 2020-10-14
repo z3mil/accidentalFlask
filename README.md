@@ -15,8 +15,8 @@
   </p>
 </p>
 
-# accidentalFlask
-A Ssimple vulnerable Python API for educational purposes, specifically built for token entropy abuse. The app is built in Python 3 with Flask and exposes 2 APIs at "/token" and "/whomai".
+# LOL, What is this?
+A simple vulnerable Python API for educational purposes, specifically built for token entropy / bad session management abuse. The app is built in Python 3 with Flask and exposes 2 APIs at ```/token``` and ```/whomai```. The web app runs locally and does not incorporate any backend storage.
 
 #### Clone and install dependencies
 ``` 
