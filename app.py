@@ -1,6 +1,9 @@
 from flask import Flask, json, request, jsonify
-import arc4, binascii, random
+import arc4, binascii, random, sys
 from colorama import Fore, Style
+
+cli = sys.modules['flask.cli']
+cli.show_server_banner = lambda *x: None
 
 api = Flask(__name__)
 
@@ -40,6 +43,6 @@ def whoami():
 if __name__ == '__main__':
     adminToken = encryptMe("admin")
     print("==> Generating \"admin\" token ... "+Fore.GREEN+adminToken+Style.RESET_ALL)
-    print("==> Exposing REST api at http://127.0.0.1:5000/token ...")
-    print("==> Exposing REST api at http://127.0.0.1:5000/whoami ...")
-    api.run()
+    print("==> Exposing REST api at http://127.0.0.1/token ...")
+    print("==> Exposing REST api at http://127.0.0.1/whoami ...")
+    api.run(host="0.0.0.0",port="80")
