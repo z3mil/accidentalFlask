@@ -43,6 +43,6 @@ def whoami():
 if __name__ == '__main__':
     adminToken = encryptMe("admin")
     print("==> Generating \"admin\" token ... "+Fore.GREEN+adminToken+Style.RESET_ALL)
-    print("==> Exposing REST api at http://127.0.0.1/token ...")
-    print("==> Exposing REST api at http://127.0.0.1/whoami ...")
-    api.run(host="0.0.0.0",port="80")
+    print("==> Exposing REST api at http://127.0.0.1:5000/token ...")
+    print("==> Exposing REST api at http://127.0.0.1:5000/whoami ...")
+    api.run(host="0.0.0.0",port="5000")
