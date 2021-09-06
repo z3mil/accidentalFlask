@@ -20,7 +20,7 @@ A simple vulnerable Python API for educational purposes, specifically built for 
 
 #### Clone and install dependencies
 ``` 
-git clone https://github.com/threatact0r/accidentalFlask.git 
+git clone https://github.com/z3mil/accidentalFlask.git
 cd accidentalFlask
 python3 -m pip install -r requirement.txt
 ```
